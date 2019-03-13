@@ -7,10 +7,12 @@ div.id = 'divcss';
 img.src = `img/1.jpg`;
 img.id = 'imgsize';
 
+
 function divIn() {
   document.body.appendChild(div);
-  div.appendChild(h1),div.appendChild(img);
-  var text = document.createTextNode( 'Only use Javascript' );
+  div.appendChild(h1);
+  div.appendChild(img);
+  var text =document.createTextNode( 'Only use Javascript' );
   h1.appendChild(text);
 }
 
@@ -18,38 +20,27 @@ function imgCss() {
     var imgSize = document.getElementById("imgsize");
     imgSize.style.width = "80%";
 }
-
 function divCss() {
     var divcss = document.getElementById("divcss");
     divcss.style.textAlign = "center";
 }
 
-// var i=0;
-// var change = setInterval(function(){
-//   if(i++ < 5){
-//       img.src = "img/"+[i]+".jpg";
-//   }else{
-//     setInterval(change);
-//     i=0;
-//   }
-// }, 1000);
+var i=0;
+var change = setInterval(function(){
 
-  var i=1;
-  var imgArr=["1","2","3","4","5"];
-
-  setInterval(function(){
-    if (i==5) {
-      i=0;
-    }
-    else {
-      img.src = "img/"+imgArr[i]+".jpg";
-      i++;
-    }
-  },1000);
+  if(i++ < 5){
+      img.src = "img/"+[i]+".jpg";
+  }else{
+    setInterval(change);
+    i=0;
+  }
+}, 1000);
 
 function init() {
   divIn();
+  clearInterval();
   imgCss();
   divCss();
 }
+
 init();
